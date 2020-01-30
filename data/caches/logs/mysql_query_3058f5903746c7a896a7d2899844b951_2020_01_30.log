@@ -1,0 +1,464 @@
+INSERT INTO `store`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('b8760c56a2a786878f81e8f36b5d7af5', '1580393129', '0.0.0.0', 'a:0:{}')
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393129', ip = '0.0.0.0', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580391330
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391330
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `store`.`ecs_admin_user`WHERE user_name = 'ADMIN'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `store`.`ecs_admin_user` WHERE user_name = 'ADMIN' AND password = 'e4944dd67ed962723d52628497fe38dc'
+
+UPDATE `store`.`ecs_admin_user` SET last_login='1580364332', last_ip='0.0.0.0' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `store`.`ecs_cart` AS c, `store`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `store`.`ecs_cart` WHERE session_id NOT  IN ('28bc740991dd37b29c1a83c6466874ab') 
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393132', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1580118336\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391332
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391332
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `store`.`ecs_admin_message` AS a, `store`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `store`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1') ) 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580364333' AND promote_end_date >= '1580364333' AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580364333' AND promote_end_date >= '1580364333' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_stats` WHERE access_time > 1580284800
+
+SELECT count(*) FROM `store`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `store`.`ecs_feedback` AS f LEFT JOIN `store`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `store`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580391333
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_users`
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580118336'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580118336
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393133', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364333;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580391333
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT agency_id FROM `store`.`ecs_admin_user` WHERE user_id = '1'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` AS o WHERE 1 
+
+SELECT o.order_id, o.order_sn, o.add_time, o.order_status, o.shipping_status, o.order_amount, o.money_paid,o.pay_status, o.consignee, o.address, o.email, o.tel, o.extension_code, o.extension_id, (   o.goods_amount + o.tax + o.shipping_fee + o.insure_fee + o.pay_fee + o.pack_fee + o.card_fee ) AS total_fee, IFNULL(u.user_name, 'Usuario anónimo') AS buyer  FROM `store`.`ecs_order_info` AS o  LEFT JOIN `store`.`ecs_users` AS u ON u.user_id=o.user_id WHERE 1  ORDER BY add_time DESC  LIMIT 0,15
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391340
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT o.*, g.goods_thumb, g.goods_number AS storage, o.goods_attr, IFNULL(b.brand_name, '') AS brand_name FROM `store`.`ecs_order_goods` AS o LEFT JOIN `store`.`ecs_goods` AS g ON o.goods_id = g.goods_id LEFT JOIN `store`.`ecs_brand` AS b ON g.brand_id = b.brand_id WHERE o.order_id = '3' 
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391342
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT o.*, g.goods_thumb, g.goods_number AS storage, o.goods_attr, IFNULL(b.brand_name, '') AS brand_name FROM `store`.`ecs_order_goods` AS o LEFT JOIN `store`.`ecs_goods` AS g ON o.goods_id = g.goods_id LEFT JOIN `store`.`ecs_brand` AS b ON g.brand_id = b.brand_id WHERE o.order_id = '4' 
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393143', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364333;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580391343
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT agency_id FROM `store`.`ecs_admin_user` WHERE user_id = '1'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` AS o WHERE 1 
+
+SELECT o.order_id, o.order_sn, o.add_time, o.order_status, o.shipping_status, o.order_amount, o.money_paid,o.pay_status, o.consignee, o.address, o.email, o.tel, o.extension_code, o.extension_id, (   o.goods_amount + o.tax + o.shipping_fee + o.insure_fee + o.pay_fee + o.pack_fee + o.card_fee ) AS total_fee, IFNULL(u.user_name, 'Usuario anónimo') AS buyer  FROM `store`.`ecs_order_info` AS o  LEFT JOIN `store`.`ecs_users` AS u ON u.user_id=o.user_id WHERE 1  ORDER BY add_time DESC  LIMIT 0,15
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393166', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364333;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391366
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `store`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `store`.`ecs_category` AS c LEFT JOIN `store`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `store`.`ecs_goods_cat` AS gc , `store`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `store`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `store`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, virtual_sales, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1580371199' AND promote_end_date >= '1580371199') AS is_promote  FROM `store`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `store`.`ecs_attribute`
+            WHERE attr_type = 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391370
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580364333'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580364333
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393350', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364550;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391550
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580364550'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580364550
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393530', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364730;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391730
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580364730'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580364730
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580393710', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364910;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580391910
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `store`.`ecs_admin_message` AS a, `store`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `store`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1') ) 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580365208' AND promote_end_date >= '1580365208' AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580365208' AND promote_end_date >= '1580365208' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_stats` WHERE access_time > 1580284800
+
+SELECT count(*) FROM `store`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `store`.`ecs_feedback` AS f LEFT JOIN `store`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `store`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580394008', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580364910;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392208
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_users`
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580392208
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392208
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580364910'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580364910
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580394008', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580365208;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392208
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_users`
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'stylename'
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392210
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `store`.`ecs_admin_message` AS a, `store`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `store`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('1') ) 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580365212' AND promote_end_date >= '1580365212' AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580365212' AND promote_end_date >= '1580365212' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_stats` WHERE access_time > 1580284800
+
+SELECT count(*) FROM `store`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `store`.`ecs_feedback` AS f LEFT JOIN `store`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `store`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_users`
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `store`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT c.cat_id, c.cat_name, c.measure_unit, c.parent_id, c.is_show, c.show_in_nav, c.grade, c.sort_order, COUNT(s.cat_id) AS has_children FROM `store`.`ecs_category` AS c LEFT JOIN `store`.`ecs_category` AS s ON s.parent_id=c.cat_id GROUP BY c.cat_id ORDER BY c.parent_id, c.sort_order ASC
+
+SELECT cat_id, COUNT(*) AS goods_num  FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_on_sale = 1  GROUP BY cat_id
+
+SELECT gc.cat_id, COUNT(*) AS goods_num  FROM `store`.`ecs_goods_cat` AS gc , `store`.`ecs_goods` AS g  WHERE g.goods_id = gc.goods_id AND g.is_delete = 0 AND g.is_on_sale = 1  GROUP BY gc.cat_id
+
+SELECT brand_id, brand_name FROM `store`.`ecs_brand` ORDER BY sort_order
+
+SELECT suppliers_id, suppliers_name, suppliers_desc
+            FROM `store`.`ecs_suppliers`
+            WHERE  is_check = 1 
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1'
+
+SELECT goods_id, goods_name, goods_type, goods_sn, virtual_sales, shop_price, is_on_sale, is_best, is_new, is_hot, sort_order, goods_number, integral,  (promote_price > 0 AND promote_start_date <= '1580371199' AND promote_end_date >= '1580371199') AS is_promote  FROM `store`.`ecs_goods` AS g WHERE is_delete='0'  AND is_real='1' ORDER BY goods_id DESC  LIMIT 0,15
+
+SELECT DISTINCT cat_id
+            FROM `store`.`ecs_attribute`
+            WHERE attr_type = 1
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580394026', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580365208;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392226
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580365208'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580365208
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580394206', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580365406;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = 'b8760c56a2a786878f81e8f36b5d7af5' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580392406
+

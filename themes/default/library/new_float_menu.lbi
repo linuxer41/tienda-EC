@@ -1,0 +1,33 @@
+<!--悬浮菜单s-->
+		 	<div class="filter-top" id="scrollUp">
+		 		<i class="iconfont icon-jiantou"></i>
+		 	</div>
+			<div class="filter-menu">
+				<div class="filter-menu-list ts-5">
+					<ul class="dis-box">
+						<li class="box-flex">
+							<i class="iconfont icon-home"></i>
+							<em>首页</em>
+						</li>
+						<li class="box-flex">
+							<i class="iconfont icon-caidan"></i>
+							<em>Categor�a<类</em>
+						</li>
+						<li class="box-flex">
+							<i class="iconfont icon-sousuo"></i>
+							<em>搜索</em>
+						</li>
+						<li class="box-flex">
+							<i class="iconfont icon-gouwuche"></i>
+							<em>购物车</em>
+						</li>
+						<li class="box-flex ">
+							<i class="iconfont icon-geren"></i>
+							<em>我</em>
+						</li>	
+						<li class="w"></li>
+					</ul>
+				</div>
+				<div class="filter-menu-title"></div>
+			</div>
+		<!--悬浮菜单e-->

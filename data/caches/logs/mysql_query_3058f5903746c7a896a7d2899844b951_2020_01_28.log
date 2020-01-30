@@ -1,0 +1,706 @@
+INSERT INTO `store`.`ecs_sessions` (sesskey, expiry, ip, data) VALUES ('5bd505d706ca008289cdc0065ea3e675', '1580147131', '0.0.0.0', 'a:0:{}')
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147131', ip = '0.0.0.0', userid = '0', adminid = '0', user_name='0', user_rank='0', discount='0', email='0', data = 'a:0:{}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT `ec_salt` FROM `store`.`ecs_admin_user`WHERE user_name = 'ADMIN'
+
+SELECT user_id, user_name, password, last_login, action_list, last_login,suppliers_id,ec_salt FROM `store`.`ecs_admin_user` WHERE user_name = 'ADMIN' AND password = 'e4944dd67ed962723d52628497fe38dc'
+
+UPDATE `store`.`ecs_admin_user` SET last_login='1580118336', last_ip='0.0.0.0' WHERE user_id='1'
+
+SELECT DISTINCT session_id FROM `store`.`ecs_cart` AS c, `store`.`ecs_sessions` AS s WHERE c.session_id = s.sesskey 
+
+DELETE FROM `store`.`ecs_cart` WHERE session_id NOT  IN ('e35a0bd3c95b0f7d5bd0ca3044f66798') 
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147136', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";s:10:\"1579938982\";s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145336
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145336
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145336
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT message_id, sender_id, receiver_id, sent_time, readed, deleted, title, message, user_name FROM `store`.`ecs_admin_message` AS a, `store`.`ecs_admin_user` AS b WHERE a.sender_id = b.user_id AND a.receiver_id = '1' AND a.readed = 0 AND deleted = 0 ORDER BY a.sent_time DESC
+
+SELECT pay_id, is_cod FROM `store`.`ecs_payment` WHERE enabled = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status  IN ('1','5')  AND shipping_status  IN ('1','2')  AND pay_status  IN ('2','1')  
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5','6')  AND   shipping_status  IN ('0','3','5')  AND ( pay_status  IN ('2','1')  OR pay_id  IN ('') ) 
+
+SELECT pay_id FROM `store`.`ecs_payment` WHERE is_cod = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND   order_status  IN ('1','5')  AND   pay_status = '0' AND ( shipping_status  IN ('1','2')  OR pay_id  IN ('') ) 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE 1  AND order_status = '0' 
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE  shipping_status=4
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_new = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_best = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_hot = 1 AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580118336' AND promote_end_date >= '1580118336' AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND promote_price>0 AND promote_start_date <= '1580118336' AND promote_end_date >= '1580118336' AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND goods_number <= warn_number AND is_real=0 AND extension_code='virtual_card'
+
+SELECT COUNT(*) FROM `store`.`ecs_stats` WHERE access_time > 1580112000
+
+SELECT count(*) FROM `store`.`ecs_sessions`
+
+SELECT COUNT(f.msg_id) FROM `store`.`ecs_feedback` AS f LEFT JOIN `store`.`ecs_feedback` AS r ON r.parent_id=f.msg_id WHERE f.parent_id=0 AND ISNULL(r.msg_id) 
+
+SELECT COUNT(*) FROM `store`.`ecs_comment` WHERE status = 0 AND parent_id = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_booking_goods` WHERE is_dispose = 0
+
+SELECT COUNT(*) FROM `store`.`ecs_user_account` WHERE process_type = 1 AND is_paid = 0 
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145336
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) AS oCount, IFNULL(SUM(order_amount), 0) AS oAmount FROM `store`.`ecs_order_info`
+
+SELECT COUNT(*) FROM `store`.`ecs_goods` WHERE is_delete = 0 AND is_alone_sale = 1 AND is_real = 1
+
+SELECT COUNT(*) FROM `store`.`ecs_users`
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'template'
+
+SELECT value FROM `store`.`ecs_shop_config` WHERE code = 'stylename'
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1579938982'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1579938982
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147136', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145336
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145336
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_shop_config` WHERE type<>'hidden'   AND (parent_id<>'5' AND id<>'5') ORDER BY parent_id, sort_order, id
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '1' AND parent_id = '1'
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '2' AND parent_id = '2'
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145340
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='cac' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='presswork' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='city_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sto_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sf_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='fpd' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_mail' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='yto' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='ems' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='flat' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='zto' ORDER BY shipping_order
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145342
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id FROM `store`.`ecs_shipping` WHERE shipping_code = 'cac'
+
+INSERT INTO `store`.`ecs_shipping` (shipping_code, shipping_name, shipping_desc, insure, support_cod, enabled, print_bg, config_lable, print_model) VALUES ('cac', 'Recogida en tu puerta', 'El comprador recoge los bienes en el lugar designado del comerciante.', '0', '1', 1, '', '', '2')
+
+INSERT INTO `store`.`ecs_admin_log` (log_time, user_id, log_info, ip_address)  VALUES ('1580118353', 1, 'InstalarMétodo de entrega: Recogida en tu puerta', '0.0.0.0')
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147153', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145353
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_name, shipping_code FROM `store`.`ecs_shipping` WHERE shipping_id='1'
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145356
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_region` WHERE parent_id = '0' ORDER BY region_id
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147193', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='cac' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='presswork' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='city_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sto_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sf_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='fpd' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_mail' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='yto' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='ems' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='flat' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='zto' ORDER BY shipping_order
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145394
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145394
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id FROM `store`.`ecs_shipping` WHERE shipping_code = 'fpd'
+
+INSERT INTO `store`.`ecs_shipping` (shipping_code, shipping_name, shipping_desc, insure, support_cod, enabled, print_bg, config_lable, print_model) VALUES ('fpd', 'Flete por cobrar', 'Tarifa de entrega de los bienes comprados a la llegada', '0', '0', 1, '', '', '2')
+
+INSERT INTO `store`.`ecs_admin_log` (log_time, user_id, log_info, ip_address)  VALUES ('1580118405', 1, 'InstalarMétodo de entrega: Flete por cobrar', '0.0.0.0')
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147205', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_name, shipping_code FROM `store`.`ecs_shipping` WHERE shipping_id='2'
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145408
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='cac' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='presswork' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='city_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sto_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sf_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='fpd' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_mail' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='yto' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='ems' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='flat' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='zto' ORDER BY shipping_order
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147236', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145436
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_region` WHERE parent_id = '0' ORDER BY region_id
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_sms` WHERE enabled = '1' ORDER BY sms_order
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145442
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145442
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT user_id, user_name, email, add_time, last_login FROM `store`.`ecs_admin_user` ORDER BY user_id DESC
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145444
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT DISTINCT ip_address FROM `store`.`ecs_admin_log`
+
+SELECT COUNT(*) FROM `store`.`ecs_admin_log` AS al  WHERE 1 
+
+SELECT al.*, u.user_name FROM `store`.`ecs_admin_log` AS al LEFT JOIN `store`.`ecs_admin_user` AS u ON u.user_id = al.user_id  WHERE 1  ORDER by al.log_id DESC LIMIT 15
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145445
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147250', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145450
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145450
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_payment` WHERE pay_name = 'Pago de saldo' AND pay_code <> 'balance'
+
+SELECT COUNT(*) FROM `store`.`ecs_payment` WHERE pay_code = 'balance'
+
+INSERT INTO `store`.`ecs_payment` (pay_code, pay_name, pay_desc, pay_config, is_cod, pay_fee, enabled, is_online)VALUES ('balance', 'Pago de saldo', 'Pague usando el saldo de su cuenta. ', 'a:0:{}', '0', '0', 1, '1')
+
+INSERT INTO `store`.`ecs_admin_log` (log_time, user_id, log_info, ip_address)  VALUES ('1580118465', 1, 'InstalarForma de pago: Pago de saldo', '0.0.0.0')
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147265', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_payment` WHERE enabled = '1' ORDER BY pay_order
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145468
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='cac' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='presswork' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='city_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sto_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sf_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='fpd' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_mail' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='yto' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='ems' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='flat' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='zto' ORDER BY shipping_order
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145472
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_shipping` WHERE shipping_id=1
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147276', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145476
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145476
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_shipping` WHERE shipping_id = '1' LIMIT 0,1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145476
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='cac' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='presswork' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='city_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sto_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='sf_express' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='fpd' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='post_mail' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='yto' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='ems' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='flat' ORDER BY shipping_order
+
+SELECT shipping_id, shipping_name, shipping_desc, insure, support_cod,shipping_order FROM `store`.`ecs_shipping` WHERE shipping_code='zto' ORDER BY shipping_order
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147552', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118336;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145752
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145752
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580118336'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580118336
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147552', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118752;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145752
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_id FROM `store`.`ecs_shipping` WHERE shipping_code = 'sf_express'
+
+INSERT INTO `store`.`ecs_shipping` (shipping_code, shipping_name, shipping_desc, insure, support_cod, enabled, print_bg, config_lable, print_model) VALUES ('sf_express', 'SF Express', 'El primer peso de 15 yuanes / kg en las zonas de Jiangsu, Zhejiang y Shanghai, el segundo peso de 2 yuanes / kg, el primer peso de 20 yuanes / kg en otras ciudades', '0', '0', 1, '/images/receipt/dly_sf_express.jpg', 't_shop_name,Nombre de la tienda en línea,150,29,112,137,b_shop_name||,||t_shop_address,Dirección de la tienda en línea,268,55,105,168,b_shop_address||,||t_shop_tel,Teléfono de contacto de la tienda en línea,55,25,177,224,b_shop_tel||,||t_customer_name,Nombre del destinatario,78,23,299,265,b_customer_name||,||t_customer_address,Dirección detallada del destinatario,271,94,104,293,b_customer_address||,||', '2')
+
+INSERT INTO `store`.`ecs_admin_log` (log_time, user_id, log_info, ip_address)  VALUES ('1580118786', 1, 'InstalarMétodo de entrega: SF Express', '0.0.0.0')
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147586', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118752;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145786
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT shipping_name, shipping_code FROM `store`.`ecs_shipping` WHERE shipping_id='3'
+
+SELECT region_id, region_name FROM `store`.`ecs_region` WHERE region_type = '0' AND parent_id = '0'
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145789
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_shipping_area` WHERE shipping_id='3' AND shipping_area_name='vaso'
+
+SELECT shipping_code FROM `store`.`ecs_shipping` WHERE shipping_id='3'
+
+INSERT INTO `store`.`ecs_shipping_area` (shipping_area_name, shipping_id, configure) VALUES ('vaso', '3', 'a:5:{i:0;a:2:{s:4:"name";s:8:"item_fee";s:5:"value";s:2:"20";}i:1;a:2:{s:4:"name";s:8:"base_fee";s:5:"value";s:2:"15";}i:2;a:2:{s:4:"name";s:8:"step_fee";s:5:"value";s:1:"2";}i:3;a:2:{s:4:"name";s:10:"free_money";s:5:"value";s:0:"";}i:4;a:2:{s:4:"name";s:16:"fee_compute_mode";s:5:"value";s:9:"by_weight";}}')
+
+INSERT INTO `store`.`ecs_area_region` (shipping_area_id, region_id) VALUES ('1', '1')
+
+INSERT INTO `store`.`ecs_admin_log` (log_time, user_id, log_info, ip_address)  VALUES ('1580118824', 1, 'AgregarÁrea de entrega: vaso', '0.0.0.0')
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147624', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580118752;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145824
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT * FROM `store`.`ecs_shipping_area` WHERE shipping_id = '3'
+
+SELECT r.region_name FROM `store`.`ecs_area_region` AS a, `store`.`ecs_region` AS r WHERE a.region_id = r.region_id AND a.shipping_area_id = '1'
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580145828
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580145828
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580118752'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580118752
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147808', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119008;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580146008
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146008
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119008'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119008
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580147988', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119188;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146188
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119188'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119188
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580148168', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119368;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580146368
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146368
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119368'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119368
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580148348', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119548;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146548
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119548'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119548
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580148528', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119728;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580146728
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146728
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119728'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119728
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580148708', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580119908;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580146908
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580119908'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580119908
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580148888', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120088;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580147088
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147088
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120088'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120088
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149068', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120268;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147268
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120268'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120268
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149248', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120448;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580147448
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147448
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120448'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120448
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149428', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120628;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147628
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120628'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120628
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149608', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120808;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580147808
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147808
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120808'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120808
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149788', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580120988;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions_data` WHERE expiry < 1580147988
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580147988
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580120988'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580120988
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580149968', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580121168;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580148168
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580121168'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580121168
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580150148', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580121348;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580148348
+
+SELECT userid, adminid, user_name, user_rank, discount, email, data, expiry FROM `store`.`ecs_sessions` WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675'
+
+SELECT code, value FROM `store`.`ecs_shop_config` WHERE parent_id > 0
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE add_time >= '1580121348'
+
+SELECT COUNT(*) FROM `store`.`ecs_order_info` WHERE pay_time >= 1580121348
+
+UPDATE `store`.`ecs_sessions` SET expiry = '1580150328', ip = '0.0.0.0', userid = '0', adminid = '1', user_name='0', user_rank='0', discount='0', email='0', data = 'a:4:{s:10:\"admin_name\";s:5:\"admin\";s:11:\"action_list\";s:3:\"all\";s:10:\"last_check\";i:1580121528;s:12:\"suppliers_id\";s:1:\"0\";}' WHERE sesskey = '5bd505d706ca008289cdc0065ea3e675' LIMIT 1
+
+DELETE FROM `store`.`ecs_sessions` WHERE expiry < 1580148528
+
