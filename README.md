@@ -61,6 +61,7 @@ Si encuentra un agujero de seguridad, envíe un correo electrónico a wanganlin@
 
 la traduccion se realizó con la api gratuita de google porlo tanto puede encontrar algunas inconsistencias
 las herramientads de traduccion se encuentran en /incude/languages/tool.py y /incude/languages/trans.py
+* falta cambiar los banners de publicidad personalizado a su tienda
 
 
 ## Licencia
@@ -69,13 +70,16 @@ ECTouch está bajo la licencia de código abierto [licencia GPL] (https://openso
 
 ## Escaparate
 
-Insalacion
+Instalacion
+
 ![Alt text](demo_img/3.jpeg?raw=true "Title")
 
 Admin
+
 ![Alt text](demo_img/5.png?raw=true "Title")
 
 User
+
 ![Alt text](demo_img/1.jpeg?raw=true "Title")
 ![Alt text](demo_img/2.jpeg?raw=true "Title")
 ![Alt text](demo_img/4li.jpeg?raw=true "Title")
